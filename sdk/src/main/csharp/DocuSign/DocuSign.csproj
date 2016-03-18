@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{821BF2E8-2B99-42A9-A2D1-852DF4A86FF9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>DocuSign.eSign</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>DocuSign</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="eSign\Api\AccountsApi.cs" />
+    <Compile Include="eSign\Api\AuthenticationApi.cs" />
+    <Compile Include="eSign\Api\CustomTabsApi.cs" />
+    <Compile Include="eSign\Api\DiagnosticsApi.cs" />
+    <Compile Include="eSign\Api\EnvelopesApi.cs" />
+    <Compile Include="eSign\Api\FoldersApi.cs" />
+    <Compile Include="eSign\Api\TemplatesApi.cs" />
+    <Compile Include="eSign\Api\UsersApi.cs" />
+    <Compile Include="eSign\Client\ApiClient.cs" />
+    <Compile Include="eSign\Client\ApiException.cs" />
+    <Compile Include="eSign\Client\ApiResponse.cs" />
+    <Compile Include="eSign\Client\Configuration.cs" />
+    <Compile Include="eSign\Model\AccountInformation.cs" />
+    <Compile Include="eSign\Model\AccountSettingsInformation.cs" />
+    <Compile Include="eSign\Model\AccountSharedAccess.cs" />
+    <Compile Include="eSign\Model\AddressInformation.cs" />
+    <Compile Include="eSign\Model\AddressInformationInput.cs" />
+    <Compile Include="eSign\Model\Agent.cs" />
+    <Compile Include="eSign\Model\ApiRequestLog.cs" />
+    <Compile Include="eSign\Model\ApiRequestLogsResult.cs" />
+    <Compile Include="eSign\Model\Approve.cs" />
+    <Compile Include="eSign\Model\Attachment.cs" />
+    <Compile Include="eSign\Model\AuthenticationStatus.cs" />
+    <Compile Include="eSign\Model\BccEmailAddress.cs" />
+    <Compile Include="eSign\Model\BulkEnvelope.cs" />
+    <Compile Include="eSign\Model\BulkEnvelopeStatus.cs" />
+    <Compile Include="eSign\Model\CarbonCopy.cs" />
+    <Compile Include="eSign\Model\CertifiedDelivery.cs" />
+    <Compile Include="eSign\Model\Checkbox.cs" />
+    <Compile Include="eSign\Model\Company.cs" />
+    <Compile Include="eSign\Model\CompositeTemplate.cs" />
+    <Compile Include="eSign\Model\ConsoleViewRequest.cs" />
+    <Compile Include="eSign\Model\CorrectViewRequest.cs" />
+    <Compile Include="eSign\Model\CustomFields.cs" />
+    <Compile Include="eSign\Model\CustomFieldsEnvelope.cs" />
+    <Compile Include="eSign\Model\CustomFieldV2.cs" />
+    <Compile Include="eSign\Model\Date.cs" />
+    <Compile Include="eSign\Model\DateSigned.cs" />
+    <Compile Include="eSign\Model\Decline.cs" />
+    <Compile Include="eSign\Model\DiagnosticsSettingsInformation.cs" />
+    <Compile Include="eSign\Model\DobInformationInput.cs" />
+    <Compile Include="eSign\Model\Document.cs" />
+    <Compile Include="eSign\Model\DocumentFieldsInformation.cs" />
+    <Compile Include="eSign\Model\DocumentTemplate.cs" />
+    <Compile Include="eSign\Model\DocumentTemplateList.cs" />
+    <Compile Include="eSign\Model\Editor.cs" />
+    <Compile Include="eSign\Model\Email.cs" />
+    <Compile Include="eSign\Model\EmailAddress.cs" />
+    <Compile Include="eSign\Model\EmailSettings.cs" />
+    <Compile Include="eSign\Model\Envelope.cs" />
+    <Compile Include="eSign\Model\EnvelopeAuditEvent.cs" />
+    <Compile Include="eSign\Model\EnvelopeAuditEventResponse.cs" />
+    <Compile Include="eSign\Model\EnvelopeDefinition.cs" />
+    <Compile Include="eSign\Model\EnvelopeDocument.cs" />
+    <Compile Include="eSign\Model\EnvelopeDocumentsResult.cs" />
+    <Compile Include="eSign\Model\EnvelopeEvent.cs" />
+    <Compile Include="eSign\Model\EnvelopeId.cs" />
+    <Compile Include="eSign\Model\EnvelopeIdsRequest.cs" />
+    <Compile Include="eSign\Model\EnvelopesInformation.cs" />
+    <Compile Include="eSign\Model\EnvelopeSummary.cs" />
+    <Compile Include="eSign\Model\EnvelopeTemplate.cs" />
+    <Compile Include="eSign\Model\EnvelopeTemplateDefinition.cs" />
+    <Compile Include="eSign\Model\EnvelopeTemplateResult.cs" />
+    <Compile Include="eSign\Model\EnvelopeTemplateResults.cs" />
+    <Compile Include="eSign\Model\EnvelopeTransactionStatus.cs" />
+    <Compile Include="eSign\Model\EnvelopeUpdateSummary.cs" />
+    <Compile Include="eSign\Model\ErrorDetails.cs" />
+    <Compile Include="eSign\Model\EventNotification.cs" />
+    <Compile Include="eSign\Model\EventResult.cs" />
+    <Compile Include="eSign\Model\Expirations.cs" />
+    <Compile Include="eSign\Model\FileType.cs" />
+    <Compile Include="eSign\Model\FileTypeList.cs" />
+    <Compile Include="eSign\Model\Filter.cs" />
+    <Compile Include="eSign\Model\FirstName.cs" />
+    <Compile Include="eSign\Model\Folder.cs" />
+    <Compile Include="eSign\Model\FolderItem.cs" />
+    <Compile Include="eSign\Model\FolderItemResponse.cs" />
+    <Compile Include="eSign\Model\FolderItemsResponse.cs" />
+    <Compile Include="eSign\Model\FolderItemV2.cs" />
+    <Compile Include="eSign\Model\FoldersRequest.cs" />
+    <Compile Include="eSign\Model\FoldersResponse.cs" />
+    <Compile Include="eSign\Model\FormulaTab.cs" />
+    <Compile Include="eSign\Model\FullName.cs" />
+    <Compile Include="eSign\Model\Group.cs" />
+    <Compile Include="eSign\Model\GroupInformation.cs" />
+    <Compile Include="eSign\Model\IdCheckInformationInput.cs" />
+    <Compile Include="eSign\Model\InitialHere.cs" />
+    <Compile Include="eSign\Model\InlineTemplate.cs" />
+    <Compile Include="eSign\Model\InPersonSigner.cs" />
+    <Compile Include="eSign\Model\Intermediary.cs" />
+    <Compile Include="eSign\Model\LastName.cs" />
+    <Compile Include="eSign\Model\List.cs" />
+    <Compile Include="eSign\Model\ListCustomField.cs" />
+    <Compile Include="eSign\Model\ListItem.cs" />
+    <Compile Include="eSign\Model\LockInformation.cs" />
+    <Compile Include="eSign\Model\LockRequest.cs" />
+    <Compile Include="eSign\Model\LoginAccount.cs" />
+    <Compile Include="eSign\Model\LoginInformation.cs" />
+    <Compile Include="eSign\Model\MatchBox.cs" />
+    <Compile Include="eSign\Model\MemberSharedItems.cs" />
+    <Compile Include="eSign\Model\MergeField.cs" />
+    <Compile Include="eSign\Model\NameValue.cs" />
+    <Compile Include="eSign\Model\Note.cs" />
+    <Compile Include="eSign\Model\Notification.cs" />
+    <Compile Include="eSign\Model\Number.cs" />
+    <Compile Include="eSign\Model\OfflineAttributes.cs" />
+    <Compile Include="eSign\Model\PageRequest.cs" />
+    <Compile Include="eSign\Model\Radio.cs" />
+    <Compile Include="eSign\Model\RadioGroup.cs" />
+    <Compile Include="eSign\Model\RecipientEmailNotification.cs" />
+    <Compile Include="eSign\Model\RecipientEvent.cs" />
+    <Compile Include="eSign\Model\RecipientPhoneAuthentication.cs" />
+    <Compile Include="eSign\Model\Recipients.cs" />
+    <Compile Include="eSign\Model\RecipientSAMLAuthentication.cs" />
+    <Compile Include="eSign\Model\RecipientSignatureInformation.cs" />
+    <Compile Include="eSign\Model\RecipientSMSAuthentication.cs" />
+    <Compile Include="eSign\Model\RecipientsUpdateSummary.cs" />
+    <Compile Include="eSign\Model\RecipientUpdateResponse.cs" />
+    <Compile Include="eSign\Model\RecipientViewRequest.cs" />
+    <Compile Include="eSign\Model\Reminders.cs" />
+    <Compile Include="eSign\Model\ResourceInformation.cs" />
+    <Compile Include="eSign\Model\ReturnUrlRequest.cs" />
+    <Compile Include="eSign\Model\SamlAssertionAttribute.cs" />
+    <Compile Include="eSign\Model\SenderEmailNotifications.cs" />
+    <Compile Include="eSign\Model\ServerTemplate.cs" />
+    <Compile Include="eSign\Model\ServiceInformation.cs" />
+    <Compile Include="eSign\Model\ServiceVersion.cs" />
+    <Compile Include="eSign\Model\SharedItem.cs" />
+    <Compile Include="eSign\Model\Signer.cs" />
+    <Compile Include="eSign\Model\SignerAttachment.cs" />
+    <Compile Include="eSign\Model\SignerEmailNotifications.cs" />
+    <Compile Include="eSign\Model\SignHere.cs" />
+    <Compile Include="eSign\Model\SocialAuthentication.cs" />
+    <Compile Include="eSign\Model\Ssn.cs" />
+    <Compile Include="eSign\Model\Ssn4InformationInput.cs" />
+    <Compile Include="eSign\Model\Ssn9InformationInput.cs" />
+    <Compile Include="eSign\Model\TabMetadata.cs" />
+    <Compile Include="eSign\Model\TabMetadataList.cs" />
+    <Compile Include="eSign\Model\Tabs.cs" />
+    <Compile Include="eSign\Model\TemplateCustomFields.cs" />
+    <Compile Include="eSign\Model\TemplateDocumentsResult.cs" />
+    <Compile Include="eSign\Model\TemplateInformation.cs" />
+    <Compile Include="eSign\Model\TemplateMatch.cs" />
+    <Compile Include="eSign\Model\TemplateNotificationRequest.cs" />
+    <Compile Include="eSign\Model\TemplateRecipients.cs" />
+    <Compile Include="eSign\Model\TemplateRole.cs" />
+    <Compile Include="eSign\Model\TemplateSummary.cs" />
+    <Compile Include="eSign\Model\TemplateTabs.cs" />
+    <Compile Include="eSign\Model\TemplateUpdateSummary.cs" />
+    <Compile Include="eSign\Model\Text.cs" />
+    <Compile Include="eSign\Model\TextCustomField.cs" />
+    <Compile Include="eSign\Model\Title.cs" />
+    <Compile Include="eSign\Model\UserInfo.cs" />
+    <Compile Include="eSign\Model\UserSettingsInformation.cs" />
+    <Compile Include="eSign\Model\ViewLinkRequest.cs" />
+    <Compile Include="eSign\Model\ViewUrl.cs" />
+    <Compile Include="eSign\Model\Zip.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

@@ -9,10 +9,10 @@ namespace SdkTests
 {
     class TestConfig
     {
-        public const string UserName = "dev.user@docusign.com";
-        public const string Password = "docusign";
-        public const string IntegratorKey = "ROSEY_KEY";
-        public const string BaseUrl = "https://localhost/restapi";
+        public const string UserName = "bappel@rwbaird.com";
+        public const string Password = "iEUr4eDHatAjow25HPKYhr4l6lU=";
+        public const string IntegratorKey = "ROBE-e89c0f20-c6a6-480a-8b62-b6178f5689ec";
+        public const string BaseUrl = "https://demo.docusign.net/restapi";
 
         public const string SignTest1File = @".../../docs/SignTest1.pdf";
 
@@ -46,8 +46,8 @@ namespace SdkTests
         public static CustomFields EnvelopeCustomFields { get; internal set; }
 
         public static string DefaultReturnUrl = "http://www.docusign.com/developer-center";
-        internal static string DefaultEmail = "dev.user@docusign.com";
-        internal static string DefaultName = "Devi User";
+        internal static string DefaultEmail = "bappel@rwbaird.com";
+        internal static string DefaultName = "Beth Appel";
 
         internal static bool EnvelopeCustomFieldsEqual(CustomFieldsEnvelope cfe)
         {

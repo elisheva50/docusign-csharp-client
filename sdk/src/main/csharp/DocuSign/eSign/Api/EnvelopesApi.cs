@@ -557,7 +557,7 @@ namespace DocuSign.eSign.Api
 		
 	    ///<param name="accountId">The external account number (int) or account ID Guid.</param><param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param><param name="documentId">The ID of the document being accessed.</param>
 		/// <returns>1Stream</returns>
-        Stream GetDocument (string accountId, string envelopeId, string documentId);
+        Stream GetDocument (string accountId, string envelopeId, string documentId, bool showChanges = false);
  
 		/// <summary>
         /// Gets a document from an envelope.
@@ -565,9 +565,12 @@ namespace DocuSign.eSign.Api
         /// <remarks>
         /// Retrieves the specified document from the envelope. If the account has the Highlight Data Changes feature enabled, there is an option to request that any changes in the envelope be highlighted.\n\nYou can also use this method to retrieve a PDF containing the combined content of all documents and the certificate. If the account has the Highlight Data Changes feature enabled, there is an option to request that any changes in the envelope be highlighted. \n\nTo retrieve the combined content replace the `{documentId}` parameter in the endpoint with `combined`.\n/accounts/{accountId}/envelopes/{envelopeId}/documents/combined
         /// </remarks>
- 	    ///<param name="accountId">The external account number (int) or account ID Guid.</param><param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param><param name="documentId">The ID of the document being accessed.</param>
+ 	    ///<param name="accountId">The external account number (int) or account ID Guid.</param>
+ 	    /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+ 	    /// <param name="documentId">The ID of the document being accessed.</param>
+ 	    /// <param name="showChanges">If true, will highlight document changes</param>
 		/// <returns>2ApiResponse of Stream</returns>
-        ApiResponse<Stream> GetDocumentWithHttpInfo (string accountId, string envelopeId, string documentId);
+        ApiResponse<Stream> GetDocumentWithHttpInfo (string accountId, string envelopeId, string documentId, bool showChanges = false);
 
         /// <summary>
         /// Gets a document from an envelope.
@@ -4333,9 +4336,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
  	    ///<param name="accountId">The external account number (int) or account ID Guid.</param><param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param><param name="documentId">The ID of the document being accessed.</param>
 		/// <returns>5Stream</returns>
-        public Stream GetDocument (string accountId, string envelopeId, string documentId)
+        public Stream GetDocument (string accountId, string envelopeId, string documentId, bool showChanges = false)
         {
-             ApiResponse<Stream> response = GetDocumentWithHttpInfo(accountId, envelopeId, documentId);
+             ApiResponse<Stream> response = GetDocumentWithHttpInfo(accountId, envelopeId, documentId, showChanges);
              return response.Data;
         }
 
@@ -4344,7 +4347,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
  	    ///<param name="accountId">The external account number (int) or account ID Guid.</param><param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param><param name="documentId">The ID of the document being accessed.</param>
 		/// <returns>6ApiResponse of Stream</returns>
-        public ApiResponse< Stream > GetDocumentWithHttpInfo (string accountId, string envelopeId, string documentId)
+        public ApiResponse< Stream > GetDocumentWithHttpInfo (string accountId, string envelopeId, string documentId, bool showChanges = false)
         {
             
             // verify the required parameter 'accountId' is set
@@ -4381,15 +4384,8 @@ namespace DocuSign.eSign.Api
             if (envelopeId != null) pathParams.Add("envelopeId", Configuration.ApiClient.ParameterToString(envelopeId)); // path parameter
             if (documentId != null) pathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
             
+			if (showChanges) queryParams.Add("show_Changes", Configuration.ApiClient.ParameterToString(showChanges));
 			
-			
-
-            
-            
-            
-
-            
-    
             // make the HTTP request
             IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
 
@@ -10077,7 +10073,5 @@ namespace DocuSign.eSign.Api
                 (ViewUrl) Configuration.ApiClient.Deserialize(response, typeof(ViewUrl)));
             
         }
-        
-    }
-    
+    }  
 }

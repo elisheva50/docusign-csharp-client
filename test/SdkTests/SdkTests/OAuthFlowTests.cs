@@ -158,6 +158,7 @@ namespace SdkTests
             Trace.WriteLine(accountInformation.ToString());
         }
 
+        [Ignore]
         [TestMethod]
         public void OAuthResourceOwnerPasswordGrantTest()
         {
